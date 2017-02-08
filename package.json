@@ -1,6 +1,6 @@
 {
   "name": "seal-counter-storage",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "seal-counter-storage manages handling of counters persisted in a MongoDB",
   "author": {
     "name": "SEAL Systems AG",

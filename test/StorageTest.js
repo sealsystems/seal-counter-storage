@@ -80,7 +80,7 @@ suite('Storage', () => {
     });
 
     test('get 10000 unique numbers', async function () {
-      this.timeout(10 * 1000);
+      this.timeout(30 * 1000);
 
       const promises = [];
 

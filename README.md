@@ -1,7 +1,7 @@
 # @sealsystems/counter-storage
 
-[![CircleCI](https://circleci.com/gh/sealsystems/seal-counter-storage.svg?style=svg)](https://circleci.com/gh/sealsystems/seal-counter-storage)
-[![AppVeyor](https://ci.appveyor.com/api/projects/status/nt7hj2kbbd6n2sm9?svg=true)](https://ci.appveyor.com/project/Plossys/seal-counter-storage)
+[![CircleCI](https://circleci.com/gh/sealsystems/node-counter-storage.svg?style=svg)](https://circleci.com/gh/sealsystems/node-counter-storage)
+[![AppVeyor](https://ci.appveyor.com/api/projects/status/5fgoemta2sv4p3ye?svg=true)](https://ci.appveyor.com/project/Plossys/node-counter-storage)
 
 @sealsystems/counter-storage manages handling of counters persisted in a MongoDB.
 

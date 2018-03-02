@@ -1,7 +1,7 @@
 {
-  "name": "seal-counter-storage",
+  "name": "@sealsystems/counter-storage",
   "version": "0.0.6",
-  "description": "seal-counter-storage manages handling of counters persisted in a MongoDB",
+  "description": "@sealsystems/counter-storage manages handling of counters persisted in a MongoDB",
   "author": {
     "name": "SEAL Systems AG",
     "email": "opensource@sealsystems.de",
@@ -19,19 +19,19 @@
   },
   "main": "lib/counterStorage.js",
   "dependencies": {
-    "async": "2.1.4",
-    "seal-mongo": "2.1.4"
+    "@sealsystems/mongo": "2.1.7"
   },
   "devDependencies": {
-    "assertthat": "0.8.3",
+    "@sealsystems/eslint-config-es": "1.1.1",
+    "assertthat": "1.0.0",
     "docker-host": "3.1.0",
-    "eslint-config-seal": "0.0.9",
-    "roboter": "0.14.4",
-    "roboter-server": "0.14.4",
-    "uuidv4": "0.4.0"
+    "lodash": "4.17.5",
+    "roboter": "0.16.0",
+    "roboter-server": "0.16.0",
+    "uuidv4": "1.0.0"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/sealsystems/seal-counter-storage.git"
+    "url": "git://github.com/sealsystems/node-counter-storage.git"
   }
 }

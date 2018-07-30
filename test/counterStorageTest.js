@@ -1,7 +1,6 @@
 'use strict';
 
 const assert = require('assertthat');
-const { host } = require('docker-host')();
 
 const counterStorage = require('../lib/counterStorage');
 const Storage = require('../lib/Storage');
@@ -23,7 +22,7 @@ suite('counterStorage', () => {
     });
 
     test('returns a storage instance when a connection could be established.', async () => {
-      const storage = await counterStorage.connect({ url: `mongodb://${host}/testdb` });
+      const storage = await counterStorage.connect({ url: `mongodb://localhost:27717/testdb` });
 
       assert.that(storage).is.instanceOf(Storage);
     });

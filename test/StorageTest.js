@@ -1,7 +1,6 @@
 'use strict';
 
 const assert = require('assertthat');
-const { host } = require('docker-host')();
 const uniq = require('lodash/uniq');
 const uuid = require('uuidv4');
 
@@ -33,7 +32,7 @@ suite('Storage', () => {
 
   suite('getCounter', () => {
     const dbName = uuid();
-    const url = `mongodb://${host}/${dbName}`;
+    const url = `mongodb://localhost:27717/${dbName}`;
 
     let storage;
 

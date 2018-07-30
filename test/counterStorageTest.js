@@ -1,11 +1,23 @@
 'use strict';
 
 const assert = require('assertthat');
+const nodeenv = require('nodeenv');
 
 const counterStorage = require('../lib/counterStorage');
 const Storage = require('../lib/Storage');
+let restore;
 
 suite('counterStorage', () => {
+  /* eslint-disable mocha/no-synchronous-tests */
+  before(() => {
+    restore = nodeenv('TLS_UNPROTECTED', 'world');
+  });
+
+  after(() => {
+    restore();
+  });
+  /* eslint-enable mocha/no-synchronous-tests */
+
   test('is an object.', async () => {
     assert.that(counterStorage).is.ofType('object');
   });

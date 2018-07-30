@@ -1,7 +1,7 @@
 'use strict';
 
 const assert = require('assertthat');
-const { host } = require('docker-host')();
+const nodeenv = require('nodeenv');
 const uniq = require('lodash/uniq');
 const uuid = require('uuidv4');
 
@@ -9,8 +9,19 @@ const mongo = require('@sealsystems/mongo');
 
 const counterStorage = require('../lib/counterStorage');
 const Storage = require('../lib/Storage');
+let restore;
 
 suite('Storage', () => {
+  /* eslint-disable mocha/no-synchronous-tests */
+  before(() => {
+    restore = nodeenv('TLS_UNPROTECTED', 'world');
+  });
+
+  after(() => {
+    restore();
+  });
+  /* eslint-enable mocha/no-synchronous-tests */
+
   test('is a function.', async () => {
     assert.that(Storage).is.ofType('function');
   });
@@ -33,7 +44,7 @@ suite('Storage', () => {
 
   suite('getCounter', () => {
     const dbName = uuid();
-    const url = `mongodb://${host}/${dbName}`;
+    const url = `mongodb://localhost:27717/${dbName}`;
 
     let storage;
 

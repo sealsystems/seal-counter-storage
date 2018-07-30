@@ -1,4 +1,5 @@
 # Node.js
+.nyc_output/
 node_modules/
 npm-debug.log
 package-lock.json
@@ -7,13 +8,9 @@ package-lock.json
 .nyc_output/
 coverage/
 
-# IntelliJ
-.idea
-*.iml
-
 # Vi
 *.swp
 *~
 
-# OS X generated files and folders
+# MacOS
 .DS_Store

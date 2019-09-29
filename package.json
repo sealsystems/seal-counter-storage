@@ -21,7 +21,7 @@
   },
   "main": "lib/counterStorage.js",
   "dependencies": {
-    "@sealsystems/mongo": "2.1.7"
+    "@sealsystems/mongo": "2.2.6"
   },
   "devDependencies": {
     "@sealsystems/eslint-config-es": "1.1.1",

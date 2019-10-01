@@ -12,26 +12,28 @@
     "prebot": "mongodb-runner start --topology=standalone --port=27717",
     "bot": "bot",
     "postbot": "mongodb-runner stop",
-    "release": "semantic-release --branch ${CIRCLE_BRANCH}",
-    "test": "npm run bot test-units",
+    "release": "release",
+    "test": "test-run",
     "precoverage": "mongodb-runner start --topology=standalone --port=27717",
-    "coverage": "nyc --reporter=text --reporter=lcov mocha",
     "postcoverage": "mongodb-runner stop",
-    "report": "npm run coverage && if [[ $OSTYPE == darwin* ]]; then open=open; else open=xdg-open; fi && $open coverage/lcov-report/index.html"
+    "licenses": "license-checker --production --csv",
+    "lint": "lint",
+    "lint:fix": "lint-fix",
+    "test:coverage": "test-coverage",
+    "test:coverage:check": "test-coverage-check",
+    "test:report": "test-report"
   },
   "main": "lib/counterStorage.js",
   "dependencies": {
     "@sealsystems/mongo": "2.1.7"
   },
   "devDependencies": {
-    "@sealsystems/eslint-config-es": "1.1.1",
-    "assertthat": "1.0.0",
+    "@sealsystems/eslint-config-es": "3.5.4",
+    "@sealsystems/mocha": "4.1.1",
+    "@sealsystems/semantic-release": "4.0.12",
     "lodash": "4.17.5",
     "mongodb-runner": "3.6.1",
     "nodeenv": "1.0.0",
-    "nyc": "12.0.2",
-    "roboter": "0.16.0",
-    "roboter-server": "0.16.0",
     "uuidv4": "1.0.0"
   },
   "repository": {
@@ -39,7 +41,7 @@
     "url": "git://github.com/sealsystems/node-counter-storage.git"
   },
   "release": {
-    "extends": "@sealsystems/semantic-release-config/node-module"
+    "extends": "@sealsystems/semantic-release/node-module"
   },
   "publishConfig": {
     "access": "public"

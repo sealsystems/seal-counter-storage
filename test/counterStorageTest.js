@@ -28,9 +28,11 @@ suite('counterStorage', () => {
     });
 
     test('throws an error when url is missing.', async () => {
-      await assert.that(async () => {
-        await counterStorage.connect({});
-      }).is.throwingAsync('Url is missing.');
+      await assert
+        .that(async () => {
+          await counterStorage.connect({});
+        })
+        .is.throwingAsync('Url is missing.');
     });
 
     test('returns a storage instance when a connection could be established.', async () => {

@@ -27,16 +27,18 @@ suite('Storage', () => {
   });
 
   test('throws an error when database is missing.', async () => {
-    assert.that(() => {
-      /* eslint-disable no-new */
-      new Storage();
-      /* eslint-enable no-new */
-    }).is.throwing('Database is missing.');
+    assert
+      .that(() => {
+        /* eslint-disable no-new */
+        new Storage();
+        /* eslint-enable no-new */
+      })
+      .is.throwing('Database is missing.');
   });
 
   test('returns an object.', async () => {
     const storage = new Storage({
-      collection () {}
+      collection() {}
     });
 
     assert.that(storage).is.ofType('object');
@@ -52,7 +54,7 @@ suite('Storage', () => {
       storage = await counterStorage.connect({ url });
     });
 
-    suiteTeardown(async function () {
+    suiteTeardown(async function() {
       this.timeout(10000);
 
       const db = await mongo.db(url, { connectionRetries: 1 });
@@ -65,9 +67,11 @@ suite('Storage', () => {
     });
 
     test('throws an error if the counter name is missing.', async () => {
-      await assert.that(async () => {
-        await storage.getCounter();
-      }).is.throwingAsync('Counter name is missing.');
+      await assert
+        .that(async () => {
+          await storage.getCounter();
+        })
+        .is.throwingAsync('Counter name is missing.');
     });
 
     test('returns next ref number', async () => {
@@ -90,7 +94,7 @@ suite('Storage', () => {
       assert.that(refNo2).is.equalTo(refNo1 + 100);
     });
 
-    test('get 10000 unique numbers', async function () {
+    test('get 10000 unique numbers', async function() {
       this.timeout(30 * 1000);
 
       const promises = [];

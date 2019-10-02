@@ -44,6 +44,7 @@
     "extends": "@sealsystems/semantic-release/node-module"
   },
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "registry": "http://plossys.jfrog.io/plossys/api/npm/npm-local"
   }
 }

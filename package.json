@@ -28,7 +28,7 @@
     "assertthat": "1.0.0",
     "lodash": "4.17.5",
     "mongodb-runner": "3.6.1",
-    "nodeenv": "1.0.0",
+    "nodeenv": "3.0.0",
     "nyc": "12.0.2",
     "roboter": "0.16.0",
     "roboter-server": "0.16.0",

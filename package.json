@@ -30,7 +30,7 @@
     "mongodb-runner": "3.6.1",
     "nodeenv": "1.0.0",
     "nyc": "12.0.2",
-    "roboter": "0.16.0",
+    "roboter": "9.2.3",
     "roboter-server": "0.16.0",
     "uuidv4": "1.0.0"
   },
